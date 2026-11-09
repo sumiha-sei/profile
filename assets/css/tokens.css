@@ -1,0 +1,89 @@
+/* デザイントークン。design/direction.md の値をそのまま。以降の CSS はここを参照する。 */
+:root {
+  color-scheme: light;
+
+  /* ---- 色 ---- */
+  --color-sky:            #d3e3de; /* 空。各ページ冒頭の帯 */
+  --color-bg:             #f4f1ea; /* 白砂。筆者紹介と404の地 */
+  --color-sea:            #20474b; /* 潮。作品の面とフッター */
+  --color-ink:            #1f2a2b; /* 墨。本文・名前 */
+  --color-muted:          #4f5b5b; /* 鼠。ラベル・補足 */
+  --color-line:           #9fb3ae; /* 罫（白砂の上） */
+  --color-accent:         #a2472f; /* 珊瑚。水平線1本・現在ページの下線・リンクの下線と hover だけ */
+  --color-on-sea:         #ecefe8; /* 潮の上の文字 */
+  --color-on-sea-muted:   #b5c6c2; /* 潮の上のラベル・読み */
+  --color-line-on-sea:    #4a6b6d; /* 潮の上の罫 */
+  --color-accent-on-sea:  #f0b39f; /* 潮の上の珊瑚（下線・hover・focus） */
+
+  /* ---- 書体 ---- */
+  --font-ja: "Zen Old Mincho", serif;
+  --font-en: "Cormorant Garamond", "Zen Old Mincho", serif;
+
+  /* ---- 文字サイズ（比率はおよそ 1.333。これ以外のサイズを増やさない） ---- */
+  --fs-xs:        0.8125rem;                                  /* 13px フッターの小さい字 */
+  --fs-sm:        0.875rem;                                   /* 14px ラベル・種類・ハンドル */
+  --fs-nav:       0.9375rem;                                  /* 15px ナビ・ルビ（かな） */
+  --fs-base:      clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);   /* 16→17px 本文 */
+  --fs-lead:      clamp(1.125rem, 1.02rem + 0.45vw, 1.375rem);/* 18→22px 紹介文の1段落目・欧文名 */
+  --fs-tag:       clamp(1.25rem, 1.05rem + 0.85vw, 1.875rem); /* 20→30px 一言（tagline） */
+  --fs-link:      clamp(2.25rem, 1.6rem + 3vw, 4rem);         /* 36→64px 外部リンク（欧文） */
+  --fs-display-m: clamp(2.5rem, 1.5rem + 5vw, 6rem);          /* 44→96px トップの作品名・長い作品名 */
+  --fs-display-l: clamp(4rem, 2rem + 12vw, 12rem);            /* 79→192px 作品ページの「作品」 */
+  --fs-title-l:   clamp(3rem, 0.5rem + 10vw, 10rem);          /* 作品名 4〜6字 */
+  --fs-title-xl:  clamp(5rem, 26vw, 18rem);                   /* 作品名 1〜3字（「言継」） */
+  --fs-name:      clamp(5.25rem, 27vw, 16rem);                /* 105→256px ファーストビューの名前 */
+
+  /* ---- 行間・字間 ---- */
+  --lh-body: 1.95;
+  --lh-lead: 1.9;
+  --lh-tag: 1.7;
+  --lh-tight: 1;
+  --ls-body: 0.06em;
+  --ls-tag: 0.1em;
+  --ls-label: 0.3em;
+  --ls-nav: 0.2em;
+  --ls-kana: 0.6em;
+  --ls-reading: 0.5em;
+  --ls-en: 0.14em;   /* SUMIHA Sei など欧文の小さい組み */
+
+  /* ---- 余白（8px 基準） ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --space-8: 8rem;
+  --space-9: 12rem;
+  --section: clamp(6rem, 14vw, 12rem);
+  --gutter: clamp(1.25rem, 5vw, 6rem);     /* 390→20px / 768→38px / 1440→72px */
+
+  /* ---- グリッド ---- */
+  --cols: 4;  --gap: 1rem;                 /* 〜767px */
+  --max: 1680px;                           /* 中身の最大幅（色面は常に画面幅いっぱい） */
+
+  /* ---- 水平線の高さ ---- */
+  --horizon: max(58svh, 22rem);            /* index のファーストビュー */
+  --horizon-page: clamp(13rem, 34svh, 20rem); /* works / 404 の帯 */
+
+  /* ---- ヘッダー ---- */
+  --header-h: 4rem;                        /* 64px */
+
+  /* ---- 罫 ---- */
+  --rule: 1px;
+
+  /* ---- 動き ---- */
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --dur-1: 300ms;   /* 色 */
+  --dur-2: 500ms;   /* 下線 */
+  --dur-3: 700ms;   /* スクロール出現 */
+  --dur-4: 900ms;   /* 水平線・フェード */
+  --dur-5: 1200ms;  /* 空 */
+}
+@media (min-width: 768px) {
+  :root { --cols: 8; --gap: 1.5rem; --header-h: 4.5rem; }
+}
+@media (min-width: 1080px) {
+  :root { --cols: 12; --gap: 2rem; --header-h: 5.5rem; --horizon: max(62svh, 30rem); }
+}
